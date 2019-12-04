@@ -1,5 +1,5 @@
 
 <!-- 在商品提醒模板（product-alerts.component.html）中，用事件绑定更新“Notify Me”按钮，以调用 notify.emit() 方法。 -->
 <p *ngIf="product.price > 700">
-    <button (click)="notify.emit()">Notify Me</button>
+    <button nz-button nzType="default" (click)="notify.emit()">Notify Me</button>
 </p>

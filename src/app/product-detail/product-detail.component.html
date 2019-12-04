@@ -1,8 +1,10 @@
-<h2>Product Details</h2>
+<div class="productetail">
+  <h2>Product Details</h2>
 
-<div *ngIf="product">
-  <h3>{{ product.name }}</h3>
-  <h4>{{ product.price | currency }}</h4>
-  <p>{{ product.description }}</p>
-
+  <div *ngIf="product">
+    <h3>{{ product.name }}</h3>
+    <h4>{{ product.price | currency }}</h4>
+    <p>{{ product.description }}</p>
+    <button>购买</button>
+  </div>
 </div>

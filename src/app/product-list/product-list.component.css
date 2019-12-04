@@ -3,3 +3,7 @@
     text-align: center;
     background-color: azure;
 }
+
+.productshow {
+    border: 1px solid red;
+}

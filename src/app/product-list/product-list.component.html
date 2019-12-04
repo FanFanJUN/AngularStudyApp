@@ -11,6 +11,7 @@
     <!-- 插值语法 {{}}。插值会把属性的值作为文本渲染出来 -->
     <!-- RouterLink 指令让路由器控制了一个链接元素。在这种情况下，路由（URL）包含一个固定的区段（ /products ）
     ，但其最后一个区段是变量，要插入当前商品的 id 属性 -->
+      <div class="productshow">
         <h3>
                 <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
                   {{ product.name }}
@@ -23,7 +24,7 @@
           <!-- 把 button 的 click 事件绑定到我们替你定义好的 share() 事件上
             （位于 product-list.component.ts ）。
           事件绑定是通过把事件名称包裹在圆括号 () 中完成的 -->
-          <button (click)="share(product.name)">
+          <button nz-button nzType="primary" (click)="share(product.name)">
                 Share
           </button>
           <!-- 打开 product-list.component.html。
@@ -43,6 +44,7 @@
           (notify)="onNotify()"
           >
           </app-product-alerts>
+        </div>     
 </div>
 </div>
 
