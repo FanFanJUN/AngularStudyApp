@@ -1,0 +1,5 @@
+/* 组件专属的样式定义了外观和感觉。商品列表中还没有定义任何样式。 */
+.productdiv {
+    text-align: center;
+    background-color: azure;
+}

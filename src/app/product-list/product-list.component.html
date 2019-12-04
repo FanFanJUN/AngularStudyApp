@@ -1,0 +1,53 @@
+
+<!-- 一个 HTML 模板，它决定了用户的呈现方式。在上一节中，
+你修改了商品列表的 HTML 模板，以显示每个商品的名称、描述和 “Share” 按钮。 -->
+<div class="productdiv">
+<h2>Products</h2>
+<!-- *ngFor 会导致 <div> 被列表中的每个商品都重复渲染一次。 -->
+        <!-- *ngFor 是一个 "结构型指令"。结构型指令会通过添加、
+删除和操纵它们的宿主元素等方式塑造或重塑 DOM 的结构。任何带有 * 的指令都是结构型指令 -->
+
+<div *ngFor="let product of products; index as productId">
+    <!-- 插值语法 {{}}。插值会把属性的值作为文本渲染出来 -->
+    <!-- RouterLink 指令让路由器控制了一个链接元素。在这种情况下，路由（URL）包含一个固定的区段（ /products ）
+    ，但其最后一个区段是变量，要插入当前商品的 id 属性 -->
+        <h3>
+                <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+                  {{ product.name }}
+                </a>
+         </h3>
+         <!-- 在 p 标签上，使用 *ngIf 指令，这样才能在当前商品有描述信息的情况下创建这个 p 元素。 -->
+         <p *ngIf="product.description">
+                Description: {{ product.description }}
+          </p>
+          <!-- 把 button 的 click 事件绑定到我们替你定义好的 share() 事件上
+            （位于 product-list.component.ts ）。
+          事件绑定是通过把事件名称包裹在圆括号 () 中完成的 -->
+          <button (click)="share(product.name)">
+                Share
+          </button>
+          <!-- 打开 product-list.component.html。
+
+          要包含这个新组件，只要像使用 HTML 元素一样使用它的选择器（ app-product-alert ）就可以了。
+          
+          通过属性绑定把当前商品作为输入传递给组件。 -->
+
+          <!--
+            父子组件传值 
+            属性绑定 []
+
+            事件绑定 () 
+          -->
+          <app-product-alerts
+          [product]="product"
+          (notify)="onNotify()"
+          >
+          </app-product-alerts>
+</div>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
