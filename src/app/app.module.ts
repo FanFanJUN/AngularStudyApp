@@ -47,6 +47,7 @@ registerLocaleData(zh);
       RouterModule.forRoot([
          { path: '', component: ProductListComponent },
          { path: 'products/:productId', component: ProductDetailComponent },
+         { path: 'cart', component: CartComponent },
        ])
    ],
     /** 配置 ng-zorro-antd 国际化（文案 及 日期） **/

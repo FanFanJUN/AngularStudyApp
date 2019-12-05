@@ -1,3 +1,10 @@
-<p>
-  cart works!
-</p>
+<div class="cartitem">
+
+<h3>购物车</h3>
+
+<div *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+</div>
