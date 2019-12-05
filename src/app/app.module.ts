@@ -15,6 +15,7 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 /** 配置 angular i18n **/
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { CartComponent } from './cart/cart.component';
 registerLocaleData(zh);
 /**定义了名为 AppModule 的根模块，
  * 它会告诉 Angular 如何组装应用。
@@ -32,23 +33,23 @@ registerLocaleData(zh);
       TopBarComponent,
       ProductAlertsComponent,
       ProductDetailComponent,
-      // NzButtonModule,
+      //NzButtonModule,
+      CartComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
-      // NzButtonModule, // 按钮
-      // NzTableModule, // 表格
-      /** 导入 ng-zorro-antd 模块 **/
+      //NzButtonModule,
+      //按钮\n//NzTableModule,
+      //表格\n/**导入ng-zorro-antd模块**/\nNgZorroAntdModule,
       NgZorroAntdModule,
-      
       // Angular 路由器
       RouterModule.forRoot([
          { path: '', component: ProductListComponent },
          { path: 'products/:productId', component: ProductDetailComponent },
        ])
    ],
-   /** 配置 ng-zorro-antd 国际化（文案 及 日期） **/
+    /** 配置 ng-zorro-antd 国际化（文案 及 日期） **/
   providers   : [
    { provide: NZ_I18N, useValue: zh_CN }
   ],
